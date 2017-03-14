@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Board">
+	<select id="getAllBoards" resultClass="vo.BoardVO">
+		select no, title, writer, likes, contents, regdate, ip
+		from tb_board
+		order by regdate desc
+	</select>
+	
+	<delete id="deleteBoard" parameterClass="int">
+		delete from tb_board
+		where no = #value#
+	</delete>
+	
+	<insert id="addBoard" parameterClass="vo.BoardVO">
+		insert into tb_board (no, title, writer, contents, regdate, ip)
+		values (board_seq.nextval, #title#, #writer#, #contents#, sysdate, #ip#)
+	</insert>
+	
+	<select id="getBoardByNo" parameterClass="int" resultClass="vo.BoardVO">
+		select no, title, writer, likes, contents, regdate, ip
+		from tb_board
+		where no = #no#
+	</select>
+	
+	<update id="modifyBoardByNo" parameterClass="vo.BoardVO">
+		update tb_board
+		set title = #title#, writer = #writer#, contents = #contents#
+		where no = #no#
+	</update>
+	
+	<update id="plusLikeCount" parameterClass="int">
+		update tb_board
+		set likes = likes+1
+		where no = #value#
+	</update>
+</sqlMap>

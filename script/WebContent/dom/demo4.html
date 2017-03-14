@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>제목: &lt;strong&gt; 완벽이해</h1>
+
+	<p id="el-1">홍길동님 안녕하세요.</p>
+	<p id="el-2"><strong>김유신</strong>님 안녕하세요.</p>
+	
+	<p id="el-3"></p>
+	<p id="el-4"></p>
+</body>
+<script type="text/javascript">
+	var text1 = document.getElementById("el-1").textContent;
+	var text2 = document.getElementById("el-1").innerHTML;
+	console.log("textContent", text1);
+	console.log("innerHTML", text2);
+	
+	var text3 = document.getElementById("el-2").textContent;
+	var text4 = document.getElementById("el-2").innerHTML;
+	console.log("textContent", text3);
+	console.log("innerHTML", text4);
+	
+	document.getElementById("el-3").textContent = "<strong>김유신</strong>님 환영합니다.";
+	document.getElementById("el-4").innerHTML = "<strong>김유신</strong>님 환영합니다.";
+</script>
+</html>

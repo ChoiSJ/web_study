@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var z = 10;
+
+	function fn1() {
+		// 지역변수: fn1 함수 안에서만 사용가능한 함수
+		var x = 10;
+		// 지역변수
+		var y = 20;
+		// 전역변수: fn2 함수 밖에서도 사용가능한 변수가 된다
+		//		함수 안에서 변수를 만들 때는 그 함수 안에서만 사용가능하게 만들자.
+		//		함수 안에서 변수를 만들 때는 꼭 var 붙이자.
+		//		var 를 붙이지 않으면 전역객체를 내가 만든 변수로 오염시키게 된다.
+		z = 30;
+	}
+	
+	function fn2() {
+		alert(z);	// 30 이 출력된다.
+		alert(x);	// 오류가 발생한다.
+	}
+	
+	//fn1();
+	fn2();
+</script>
+</html>

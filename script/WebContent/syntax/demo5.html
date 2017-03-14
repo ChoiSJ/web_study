@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	// 자바스크립트 function
+	// 코드 블록
+	function fn1(x, y, z) {
+		var result = x + y + z;
+		console.log(result);
+	}
+	
+	fn1();
+	fn1(1, 2);
+	fn1(1, 2, 3);
+	fn1(1, 2, '길동');
+	fn1(1, 2, 3, 4, 5, 6, 7, 8);
+	
+	function fn2() {
+		// arguments 는 자바스크립트 함수가 내장하고 있는 특별한 변수다.
+		// arguments 는 함수가 호출될 때 전달받은 매개변수값들을 순서대로 담고 있는 배열이다.
+		console.log(arguments);
+	}
+	
+	fn2(1, 2, 4);
+	
+	function fn3(x, y) {
+		return x + y;
+	}
+	
+	var z = fn3(10, 20);
+	console.log(z);
+	
+	// 이름 없는 함수를 만들어서 변수에 담아두기
+	var fn4 = function(a, b) {
+		console.log(a * b);
+	}
+	
+	fn4(500, 700);
+	
+	function fn5(a, b, f) {
+		f(a, b);
+	}
+	
+	fn5(10, 20, fn4);
+</script>
+</html>

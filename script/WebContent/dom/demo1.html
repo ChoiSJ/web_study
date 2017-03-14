@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="header-title">DOM 예제</h1>
+</body>
+<script type="text/javascript">
+	// <h1> 태그 접근하기
+	
+	// id 를 이용해서
+	// el1 에는 <h1> 태그를 표현하는 엘리먼트 객체가 들어 있다.
+	var el1 = document.getElementById("header-title");
+	var text = el1.textContent;
+	//alert(text);
+	el1.textContent = "HTML DOM 연습하기";
+	
+	// 새로운 속성을 추가하기
+	el1.setAttribute("title", "제목");
+	// 지정된 속성의 속성값 조회하기
+	var value = el1.getAttribute("title");
+	console.log("속성값", value);
+	
+	// 태그명을 이용해서
+	//var el2 = document.getElementsByTagName("h1")[0];
+	//var text2 = el2.textContent;
+	//alert(text2);
+</script>
+</html>

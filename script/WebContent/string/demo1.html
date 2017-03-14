@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		이름: <input type="text" id="user-name" name="username">
+	</form>
+</body>
+<script type="text/javascript">
+	var str = "Hello, Javascript string";
+	
+	// String 의 프로퍼티
+	// length: 문자의 길이를 반환한다.
+	var len = str.length;
+	console.log('문자열의 길이', len);
+	
+	// String 의 주요 메소드
+	// charAt(Position): 지정된 위치의 문자를 반환한다.
+	console.log('10번째 문자', str.charAt(10));
+	
+	// indexOf(searchValue): 지정된 문자열이 등장하는 위치를 반환한다. 없으면 -1 을 반환
+	// search(searchValue): 지정된 문자열이 등장하는 위치를 반환한다.(정규표현식을 사용할 수 있다.)
+	console.log('s가 등장하는 위치', str.indexOf('s'));
+	console.log('s가 등장하는 위치', str.search('s'));
+	
+	// replace(searchValue, newValue): 지정된 문자열을 찾아서 새 문자열로 변경한다.
+	//									(searchValue 에서 정규표현식 사용가능)
+	// Java 와는 다르게 처음으로 매칭되는 하나만 바꾼다.
+	var str2 = "Mr Blue has a blue house a blue car";
+	//var str3 = str2.replace('blue', 'red');
+	// 제어문자 g(global) 를 적용하면 매칭되는 모든 blue 가 red 로 변경된다.
+	//var str3 = str2.replace(/blue/g, 'red');
+	// 제어문자 i(case-insentive) 를 적용하면 대소문자 구별 없이 Blue, blue 를 모두 red 로 변경한다.
+	var str3 = str2.replace(/blue/ig, 'red');
+	console.log('변경된 문자열', str3);
+	
+	var text = "이순신,김유신,강감찬";
+	// split(separator): 지정된 구분자를 사용해서 문자열을 나누고, 잘려진 문자열을 담고 있는 배열을 반환한다.
+	console.log(text.split(','));
+	
+	// startsWith(searchValue): 지정된 문자로 문자열이 시작되는지 여부를 boolean 값으로 반환한다.
+	// endWith(endValue): 지정된 문자로 문자열이 끝나는지 여부를 boolean 값으로 반환한다.
+	var url = 'http://www.daum.net';
+	console.log('http 로 시작하는 url 인가?', url.startsWith('http'));
+	
+	// substr(beginIndex, length): 시작위치부터 지정된 갯수만큼 문자열을 잘라서 반환한다.
+	//								length 를 생략하면 문자열 끝까지 잘라서 반환한다.
+	// substring(beginIndex, endIndex): 시작위치 ~ 끝위치 사이의 문자열을 잘라서 반환한다.
+	//									endIndex 를 생략하면 문자열 끝까지 잘라서 반환한다.
+	console.log(url.substr(7, 3));
+	console.log(url.substring(7, 10));
+	
+	// toUpperCase(), toLowerCase(): 대소문자로 변환된 문자열을 반환한다.
+	// trim(): 불필요한 좌우공백이 제거된 문자열을 반환한다.
+</script>
+</html>

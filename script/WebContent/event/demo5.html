@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		이름:<br/>
+		<input type="text" id="user-name" onblur="checkUsername(event)"
+										onchange="changeUsername()"/><br/>
+		전화번호:<br/>
+		<input type="text" id="tel-1" onkeyup="moveNext()"/> -
+		<input type="text" id="tel-2"/> <br/>
+		
+		지역:<br/>
+		<select id="location" onchange="changeLocation()">
+			<option value="서울">서울</option>
+			<option value="경기">경기</option>
+			<option value="인천">인천</option>
+			<option value="강원">강원</option>
+		</select>
+		
+		<select id="gugun">
+			<option>지역을 선택하세요.</option>
+		</select>
+		
+		결혼여부:<br/>
+		<input type="radio" id="wedding-1" name="wedding" value="y" onchange="changeWedding(event)" checked="checked"/> 기혼 
+		<input type="radio" id="wedding-2" name="wedding" value="n" onchange="changeWedding(event)"/> 미혼 <br/>
+		결혼기념일:<br/>
+		<input type="text" id="wedding-day"/><br/>
+	</form>
+</body>
+<script type="text/javascript">
+	function changeWedding(e) {
+		console.log("onchange event - wedding");
+		console.log("체크된 항목:" + e.target.value);
+		
+		var inputEL = document.getElementById("wedding-day");
+		if (e.target.value == 'y') {
+			inputEL.removeAttribute("disabled");
+			inputEL.disabled = false;
+		} else if (e.target.value == 'n') {
+			inputEL.value = "";
+			inputEL.setAttribute("disabled", "disabled");
+			inputEL.disabled = true;
+		}
+	}
+
+	function changeLocation() {
+		var seoul = ["종로구", "영등포구", "서대문구"];
+		var kyoungi = ["수원시", "평택시", "의정부시"];
+		var incheon = ["연수구", "계양구", "부평구"];
+		var kangwon = ["원주시", "강릉시", "춘천시"];
+		var location = {'서울':seoul, '경기':kyoungi, '인천':incheon, '강원':kangwon};
+		
+		console.log("onchange event - location");
+		var value = document.getElementById("location").value;
+		
+		var arr = location[value];
+		
+		var htmlContent = "";
+		for (var i=0; i<arr.length; i++) {
+			htmlContent = "<option value='"+arr[i]+"'>"+arr[i]+"</option>";
+		}
+		
+		document.getElementById("gugun").innerHTML = htmlContent;
+	}
+
+	function changeUsername() {
+		console.log("onchange event - username");
+	}
+
+	function moveNext() {
+		var value = document.getElementById("tel-1").value;
+		
+		if (value.length == 4) {
+			document.getElementById("tel-2").focus();
+		}
+	}
+
+	function checkUsername(e) {
+		/*
+		var inputEL = document.getElementById("user-name");
+		var value = inputEL.value;
+		
+		if (value == "") {
+			alert("이름은 필수입력값입니다.");
+			inputEL.focus();
+			return false;
+		}
+		*/
+	}
+</script>
+</html>

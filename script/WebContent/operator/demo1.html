@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var x = 35;
+	var y = "35";
+	var z = 35;
+	
+	// x 와 y 의 값이 같은지 비교하다.
+	var result1 = (x == y);	// == 은 표현식이 같으면 true 다.
+	alert("==의 연산결과:" + result1);	// true
+	
+	// x 와 y 의 값과 타입이 같은지 비교한다.
+	var result2 = (x === y);	// === 은 표현식이 같고 타입이 같으면 true 다.
+	alert("===의 연산결과:" + result2);	// false
+	
+	var result3 = (x !== y);	// !== 은 표현식은 같고 타입이 다르면 true 다.
+	alert("35와 '35' !== 의 연산결과:" + result);	// true
+	
+	var result4 = (x !== z);
+	alert("35와 35 !==의 연산결과:" + result4);	// false
+</script>
+</html>

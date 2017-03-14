@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <!-- 
+  	ServletContext 의 초기파라미터값 설정하기
+  	<context-param/> 으로 설정한 파라미터값은 웹애플리케이션 어디에서나 사용가능하다.
+   -->
+  
+  <context-param>
+  	<param-name>companyName</param-name>
+  	<param-value>중앙HTA학원</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>admin</param-name>
+  	<param-value>admin@jhta.co.kr</param-value>
+  </context-param>
+  
+  <!-- 서블릿 배포하기 -->
+  <servlet>
+  	<servlet-name>configDemo</servlet-name>
+  	<servlet-class>web2.ConfigDemoServlet</servlet-class>
+  	<init-param>
+  		<param-name>pageTitle</param-name>
+  		<param-value>ServletConfig 연습하기</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>configDemo</servlet-name>
+  	<url-pattern>/config.hta</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 에러 페이지 설정 -->
+  <error-page>
+  	<exception-type>java.sql.SQLException</exception-type>
+  	<location>/error/db_error.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/server_error.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/notfound.jsp</location>
+  </error-page>
+</web-app>

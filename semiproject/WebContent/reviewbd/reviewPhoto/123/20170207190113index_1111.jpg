@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		
+<script type="text/javascript">
+
+window.onload= function(){
+	
+	
+	document.getElementById("stts_cd").value = "276501";
+	document.getElementById("seq").value = "1";
+	document.getElementById("base64_code").value = parent.document.getElementById("chart1").saveAsImage().replace("data:image/undefined;base64,","");
+
+	document.frm.action = "/potal/stts/idxMain/rmate_imgBase64.do";
+	document.frm.submit();
+	
+}
+</script>
+
+</head> 
+<form id="searchVO" name="frm" action="/rMate/jsp/_chart/iframe_rmateImgSv.jsp?stts_cd=276501&amp;seq=1" method="POST">
+	<input type="hidden" id="base64_code" name="base64_code"/>
+	<input type="hidden" id="stts_cd" name="stts_cd"/>
+	<input type="hidden" id="seq" name="seq"/>
+</form>
+</html>
+		
+

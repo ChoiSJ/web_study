@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn1" onclick="fn1()">버튼1</button>
+	<button id="btn2">버튼2</button>
+	<button id="btn3">버튼3</button>
+	<button id="btn4">버튼4</button>
+	<button id="btn5">버튼5</button>
+</body>
+<script type="text/javascript">
+	//document.getElementById("btn2").onclick = fn2;
+	// element.onclick = 실행될 함수명;
+	var secondBtn = document.getElementById("btn2");
+	secondBtn.onclick = fn2;
+	
+	// element.addEventListener("click", 실행될 함수명);
+	var thirdBtn = document.getElementById("btn3");
+	thirdBtn.addEventListener("click", fn3);
+	
+	var fourthBtn = document.getElementById("btn4");
+	fourthBtn.onclick = function () {
+		alert("네 번째 버튼 클릭");
+	}
+	
+	var fifthBtn = document.getElementById("btn5");
+	fifthBtn.addEventListener("click", function(e) {
+		alert("다섯 번째 버튼 클릭");
+		alert(e);
+	});
+
+	function fn1() {
+		alert("첫 번째 버튼 클릭");
+	}
+	
+	function fn2() {
+		alert("두 번째 버튼 클릭");
+	}
+	
+	function fn3() {
+		alert("세 번째 버튼 클릭");
+	}
+</script>
+</html>

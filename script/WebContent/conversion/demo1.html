@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	가격:<input type="text" id="price-field" value="0"/><br/>
+	수량:<input type="text" id="qty-field" value="0"/>
+	<button id="total-btn" onclick="displayTotalPrice();">계산</button><br/>
+	
+	결제금액:<input type="text" id="total-field" readonly="readonly"/>
+</body>
+<script type="text/javascript">
+	function displayTotalPrice() {
+		var priceText = document.getElementById("price-field").value;
+		var qtyText = document.getElementById("qty-field").value;
+		console.log("가격:", priceText);
+		console.log("수량:", qtyText);
+		
+		// 입력필드의 문자열을 숫자(정수)로 변환
+		var price = parseInt(priceText);
+		var qty = parseInt(qtyText);
+		
+		var totalPrice = price * qty;
+		
+		// 계산된 결제금액을 결제금액 필드에 표시하기
+		document.getElementById("total-field").value = totalPrice;
+	}
+</script>
+</html>

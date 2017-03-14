@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//var name = prompt("고객님 이름을 입력하세요", '');
+	//var customerName = name || "고객";
+	//
+	//alert(customerName + "님 반갑습니다.");
+	
+	function saveImg(filename, path) {
+		var saveDirectory = path || '/photo';
+		
+		alert(saveDirectory + '에 ' + filename + '을 저장합니다.');
+	}
+	
+	saveImg('cat.png');
+	saveImg('dog.png', '/photo/animals');
+</script>
+</html>

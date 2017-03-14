@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.on {color: red}
+	.off {color: gray;}
+</style>
+</head>
+<body>
+	<p class="on">등록하기</p>
+	<p class="off">삭제하기</p>
+	
+	<p class="on">추가하기</p>
+	<p class="off">수정하기</p>
+</body>
+<script type="text/javascript">
+	// 모든 p태그를 선택하기
+	var pList = document.getElementsByTagName("p");
+	
+	// class 값이 on 인 p태그 선택하기, 선택된 태그의 class속성값을 전부 off 로 바꾸기
+	var activePList = document.getElementsByClassName("on");
+	var count = activePList.length;
+	for (var i=0; i<count; i++) {
+		var activeP = activePList[i];
+		activeP.setAttribute("class", "off");
+	}
+	
+	// 2번째 p태그 선택하기
+	var secondP = document.getElementsByTagName("p")[1];
+	secondP.textContent = "수정하기";
+	
+</script>
+</html>

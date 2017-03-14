@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>폼 연습</title>
+<link rel="stylesheet" href="../bootstrap-3.3.2/css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<h1>입력 폼 만들기</h1>
+		
+		<!-- 
+			label 과 폼 요소(input, textarea, select) 를 감싸는 <div class="form-group"> 이 필요하다.
+			폼요소들에게는 class="form-control" 속성을 추가한다.
+		 -->
+		
+		<h3>기본 입력폼: Vertical form</h3>
+		<div class="well">
+			<form method="post" action="register.jsp">
+				<div class="form-group">
+					<label>아이디</label>
+					<input type="text" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label>비밀번호</label>
+					<input type="password" class="form-control" />
+				</div>
+				<button type="submit" class="btn btn-default">등록</button>
+			</form>
+		</div>
+		
+		<h3>horizontal form</h3>
+		<div class="well">
+			<form class="form-horizontal" method="post" action="register.jsp">
+				<div class="form-group">
+					<label class="control-label col-sm-2">아이디</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="userid" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">비밀번호</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" name="userpwd" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2">
+						<button type="submit" class="btn btn-default">로그인</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

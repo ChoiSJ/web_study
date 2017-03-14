@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	fn1();		// fn1 함수 실행됨
+	//fn2();	// 오류
+	
+	function fn1() {
+		alert('fn1 함수가 실행되었습니다.');
+	}
+	
+	// 익명함수를 만들어서 변수에 저장한 경우에는 그 코드 아래부분에서만 사용가능하다.
+	var fn2 = function() {
+		alert('fn2 함수가 실행되었습니다.');
+	}
+	
+	fn2();	// fn2 함수 실행됨
+</script>
+</html>

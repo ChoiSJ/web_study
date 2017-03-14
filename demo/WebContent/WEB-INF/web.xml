@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>demo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  	<!-- 
+  		demo3.BoardDeleteServlet 을 boardDelete 라는 이름으로 배포하라.
+  	 -->
+  
+  	<servlet>
+  		<servlet-name>boardDelete</servlet-name>
+  		<servlet-class>demo3.BoardDeleteServlet</servlet-class>
+  		<!-- 
+  		<load-on-startup>1</load-on-startup>
+  		 -->
+  	</servlet>
+  	
+  	<!-- 
+  		/del.hta 라는 url 요청이 오면 boardDelete 라는 이름으로 배포된 서블릿을 실행하라.
+  	 -->
+  	
+  	<servlet-mapping>
+  		<servlet-name>boardDelete</servlet-name>
+  		<url-pattern>/del.hta</url-pattern>
+  	</servlet-mapping>
+  	
+  	<session-config>
+  		<!-- HttpSession 의 만료시간을 분단위로 설정한다. -->
+  		<session-timeout>30</session-timeout>
+  	</session-config>
+</web-app>

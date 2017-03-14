@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div, p {
+		padding: 30px;
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+	<div onclick="fn3(event)">
+		<p onclick="fn2(event)">
+			<button onclick="fn1(event)">클릭</button>
+		</p>
+	</div>
+</body>
+<script type="text/javascript">
+	function fn1(e) {
+		e.stopImmediatePropagation();
+		console.log("button 클리시 동작 수행 중...");
+	}
+	
+	function fn2(e) {
+		e.stopPropagation();
+		console.log("p 클리시 동작 수행 중...");
+	}
+	
+	function fn3(e) {
+		e.stopPropagation();
+		console.log("div 클리시 동작 수행 중...");
+	}
+</script>
+</html>

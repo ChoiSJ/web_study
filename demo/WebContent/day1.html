@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫째 날 메인 페이지</title>
+</head>
+<body>
+	<h2>1일차</h2>
+	<ul>
+		<li><a href="sample">SampleServlet 실행요청하기</a></li>
+		<li><a href="sample.jsp">sample.jsp 실행요청하기</a></li>
+		
+		<li><a href="sample2?id=hong">홍길동의 상세정보 요청</a></li>
+		<li><a href="sample2?id=lee">이순신의 상세정보 요청</a></li>
+		<li><a href="sample2?id=part">팍의 상세정보 요청</a></li>
+		<li>
+			<form action="sample3">
+				검색어 : <input type="text" name="keyword"/><button>검색</button>
+			</form>
+		</li>
+		<li>
+			<form method="post" action="sample4">
+				아이디:<br/>
+				<input type="text" name="userid"/><br/>
+				비밀번호:<br/>
+				<input type="password" name="userpwd"/><br/>
+				<button>로그인</button>
+			</form>
+		</li>
+		<li>
+			<form method="post" action="sample5">
+				사는 곳:<br/>
+				<select name="house">
+					<option value="seoul"> 서울</option>
+					<option value="kyounggi" selected="selected"> 경기</option>
+					<option value="incheon"> 인천</option>
+					<option value="etc"> 기타</option>
+				</select><br/>
+				성별:<br/>
+				<input type="radio" name="gener" value="female" checked="checked"/>여성
+				<input type="radio" name="gener" value="male"/>남성<br/>
+				자기소개:<br/>
+				<textarea rows="5" cols="60" name="memo"></textarea>	
+				<button>등록</button>
+			</form>
+		</li>
+	</ul>
+	
+	<form method="post" action="sample6">
+		제목:<br/>
+		<input type="text" name="title"><br/>
+		저자:<br/>
+		<input type="text" name="author"><br/>
+		출판사:<br/>
+		<input type="text" name="publisher"><br/>
+		가격:<br/>
+		<input type="text" name="price"><br/>
+		출판일<br/>
+		<input type="date" name="pubdate"><br/>
+		<button>등록</button>
+	</form>
+	
+	<h2>출판사이름으로 책 조회하기</h2>
+	<form action="sample7" method="post">
+		출판사명:<input type="text" name="pub_name"/><button>조회</button>
+	</form>
+	
+	<h2>학생 가입</h2>
+	<ul>
+		<li>
+			<form method="post" action="sample8">
+				번호:<br/>
+				<input type="text" name="no"><br/>
+				이름:<br/>
+				<input type="text" name="name"><br/>
+				전공:<br/>
+				<input type="text" name="major"><br/>
+				학년:<br/>
+				<select name="grade">
+					<option value="1" selected="selected">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select><br/>
+				전화번호:<br/>
+				<input type="text" name="phone"><br/>
+				아이디:<br/>
+				<input type="text" name="id"><br/>
+				비밀번호:<br/>
+				<input type="password" name="password"><br/>
+				<button>등록</button>
+			</form>
+		</li>
+	</ul>
+	
+	<h2>학생 검색</h2>
+	<form method="post" action="sample9">
+		검색명:<input type="text" name="name"><button>조회</button>
+	</form>
+</body>
+</html>

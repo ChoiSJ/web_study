@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="emp">
+	
+	<!-- 모든 부서 정보를 조회하는 SQL -->
+	<!-- department의 정보를 모두 가져오는 쿼리 로 resultClass(받는값의 타입을 지정)의 타입은 department가 나오므로 resultClass에는 Dept의 경로를 그대로 설정해준다. -->
+	<select id="getAllDept" resultClass="vo.Dept">
+		select
+			department_id	as id,
+			department_name as name
+		from
+			departments
+		order by
+			department_name
+	</select>
+	
+	<!-- 부서아이디에 해당하는 사원들을 조회하는 SQL -->
+	<!-- department의 번호를 입력하면 그부서번호에 해당하는 사원들의 간략한 정보를 조회하는 쿼리문 prarmeterClass(where에 사용할 값)는 부서번호별로 조회하는것이므로 부서번호가 int타입이라 타입을 int로 지정해주었다. -->
+	<select id="getEmployeeByDeptId" parameterClass="int" resultClass="vo.Emp">
+		select
+			employee_id		as id,
+			first_name		as firstName,
+			last_name		as lastName
+		from
+			employees
+		where 
+			department_id = #id#
+		order by
+			first_name
+			
+	</select>
+	<!-- 사원 아이디에 해당하는 사원상세정보를 조히하는 SQL -->
+	<select id="getEmployeeById" parameterClass="int" resultClass="vo.Emp">
+		select
+			employee_id as id,
+			first_name as firstName,
+			last_name as lastName,
+			phone_number as phone,
+			job_id as jobId,
+			nvl(salary, 0) as salary,
+			nvl(commission_pct, 0) as commission
+		from
+			employees
+		where 
+			employee_id = #id#
+	</select>
+</sqlMap>

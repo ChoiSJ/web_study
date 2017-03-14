@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	/*
+	아래의 자바스크립트 함수를 자바스크립트 엔진은 이렇게 해석한다.
+	function fn() {
+		var x, y;		<--- "변수 끌어올리기" 가 적용된다.
+		console.log(x);
+		console.log(y);
+		x = 10;
+		if (x > 5) {
+			y = x * 100
+		}
+		console.log(x);
+		console.log(y);
+	}
+	*/
+
+
+	function fn() {
+		console.log(x);	// 에러가 발생하지 않는다.
+		console.log(y);	// 에러가 발생하지 않는다.
+		
+		
+		var x = 10;
+		
+		if (x > 5) {
+			var y = x * 100;
+		}
+		
+		console.log(x);	// 10 출력
+		console.log(y);	// 1000 출력, 에러가 발생하지 않는다.
+	}
+	
+	fn();
+</script>
+</html>
