@@ -6,7 +6,7 @@
 <% 
 	request.setCharacterEncoding("utf-8");
 
-	HttpSession session =request.getSession(false);
+	HttpSession session = request.getSession(false);
 	
 	if (session == null) {
 		response.sendRedirect("main.jsp?err=deny");
