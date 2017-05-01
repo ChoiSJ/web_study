@@ -59,7 +59,7 @@
 					
 					// 배열형태
 					// 배열의 형태는 $.each함수를 통해 값을 꺼낸다.
-					$.each(data,function(index,item){
+					$.each(data,function(index, item){
 						
 						var $li = $('<li class="list-group-item"></li>');
 						$li.attr('id','emp-'+item.id);
